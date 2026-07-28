@@ -1,0 +1,109 @@
+# -------------------------------------------------------
+# Jekyll Configuration – Indomandiri Isolasi
+# -------------------------------------------------------
+
+# Site identity
+title: "Indomandiri Isolasi"
+description: "Supplier rockwool, glasswool, aluminium foil, dan material isolasi panas dan suara di Indonesia. Melayani Surabaya, Jakarta, Semarang, Bali, Kalimantan, Sulawesi."
+url: "https://indomandiriisolasi.com"
+baseurl: ""
+lang: id
+
+# Build
+timezone: Asia/Jakarta
+encoding: UTF-8
+
+# Permalink style – matches original WordPress pretty permalinks
+permalink: /:slug/
+
+# Blog pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Plugins (all supported on GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Collections
+collections:
+  products:
+    output: true
+    permalink: /product/:slug/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "Indomandiri Isolasi"
+      comments: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: products
+    values:
+      layout: product
+
+# SEO (jekyll-seo-tag)
+logo: /wp-content/uploads/2020/10/cropped-d69bedbc-18b1-4961-9f74-04ac82d4a35a.jpg
+author:
+  name: "Indomandiri Isolasi"
+  url: "https://indomandiriisolasi.com"
+
+# Social / SEO
+social:
+  name: "Indomandiri Isolasi"
+  links:
+    - https://www.facebook.com/indomandiriisolasi
+    - https://wa.me/6285233826633
+
+# Google verification
+google_site_verification: "x1fsPegmXGZkMbochzj0wkDOXqxzYe3-GdFjZ4_6hv0"
+
+# Feed (jekyll-feed)
+feed:
+  path: feed.xml
+
+# Sitemap (jekyll-sitemap)
+# sitemap.xml is auto-generated – no extra config needed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gemini/
+  - .git/
+  - README.md
+  - "*.log"
+  - node_modules/
+  - vendor/
+  # WordPress artifacts (will be cleaned up in later stages)
+  - "wp-login.php.html"
+  - "wp-login.php@action=lostpassword.html"
+  - "xmlrpc.php@rsd"
+  # WordPress ?p= single-page URLs (replaced by proper Jekyll pages)
+  - "index.html@p=*.html"
+  - "index.html@p=1.html"
+  - "index.html@p=91.html"
+  - "index.html@p=136.html"
+  - "index.html@p=145.html"
+  - "index.html@p=201.html"
+  # WordPress year/month archive dirs (not needed in Jekyll)
+  - "2019"
+  - "2020"
+  - "2021"
+  - "2022"
+  - "2023"
+
+# Keep WordPress upload paths intact (don't process through Jekyll)
+keep_files:
+  - wp-content/uploads

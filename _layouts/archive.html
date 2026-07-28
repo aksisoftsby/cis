@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<div class="container nv-index-posts">
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+    <div class="col-md-8 col-sm-12" style="flex: 0 0 70%; max-width: 70%; padding-right: 30px;">
+      <h1 class="page-title" style="margin-bottom: 30px;">{{ page.title | default: "Blog" }}</h1>
+      
+      <div class="posts-wrapper">
+        {% for post in paginator.posts %}
+          <article class="nv-non-grid-article" style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+            <div class="non-grid-content">
+              <h2 class="blog-entry-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              <div class="nv-meta-list" style="color: #666; font-size: 0.9em; margin-bottom: 10px;">
+                <span>{{ post.date | date: "%d/%m/%Y" }}</span>
+              </div>
+              <div class="excerpt-wrap">
+                <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+              </div>
+              <a href="{{ post.url | relative_url }}" class="button button-primary" style="display: inline-block; margin-top: 10px;">Baca Selengkapnya &rarr;</a>
+            </div>
+          </article>
+        {% else %}
+          {% for post in site.posts limit:10 %}
+            <article class="nv-non-grid-article" style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+              <div class="non-grid-content">
+                <h2 class="blog-entry-title">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                <div class="nv-meta-list" style="color: #666; font-size: 0.9em; margin-bottom: 10px;">
+                  <span>{{ post.date | date: "%d/%m/%Y" }}</span>
+                </div>
+                <div class="excerpt-wrap">
+                  <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                </div>
+                <a href="{{ post.url | relative_url }}" class="button button-primary" style="display: inline-block; margin-top: 10px;">Baca Selengkapnya &rarr;</a>
+              </div>
+            </article>
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+      <!-- Pagination links -->
+      {% if paginator.total_pages > 1 %}
+        <ul class="page-numbers" style="display: flex; gap: 10px; margin-top: 30px; list-style: none; padding: 0;">
+          {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | relative_url }}" class="prev page-numbers">&laquo; Sebelumnya</a></li>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <li><span class="page-numbers current" style="font-weight: bold; padding: 8px 12px; background: #0366d6; color: #fff; border-radius: 4px;">{{ page }}</span></li>
+            {% else %}
+              <li><a href="{{ site.paginate_path | replace: ':num', page | relative_url }}" class="page-numbers" style="padding: 8px 12px; background: #eee; border-radius: 4px;">{{ page }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | relative_url }}" class="next page-numbers">Berikutnya &raquo;</a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="col-md-4 col-sm-12" style="flex: 0 0 30%; max-width: 30%;">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</div>

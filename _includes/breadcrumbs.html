@@ -1,0 +1,12 @@
+<nav class="neve-breadcrumbs-wrapper" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">Beranda</a>
+  {% if page.layout == 'post' %}
+    &nbsp;&raquo;&nbsp; <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    &nbsp;&raquo;&nbsp; <span>{{ page.title }}</span>
+  {% elsif page.layout == 'product' %}
+    &nbsp;&raquo;&nbsp; <span>Produk</span>
+    &nbsp;&raquo;&nbsp; <span>{{ page.title }}</span>
+  {% else %}
+    &nbsp;&raquo;&nbsp; <span>{{ page.title }}</span>
+  {% endif %}
+</nav>

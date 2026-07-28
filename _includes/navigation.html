@@ -1,0 +1,66 @@
+<ul id="nv-primary-navigation-main" class="primary-menu-ul nav-ul menu-desktop">
+  {% for item in site.data.navigation.main %}
+    {% assign is_active = false %}
+    {% if page.url == item.url %}
+      {% assign is_active = true %}
+    {% endif %}
+    
+    <li class="menu-item {% if item.children %}menu-item-has-children{% endif %} {% if is_active %}nv-active{% endif %}">
+      <div class="wrap">
+        <a href="{{ item.url | relative_url }}">
+          {% if item.children %}<span class="menu-item-title-wrap dd-title">{% endif %}
+          {{ item.title }}
+          {% if item.children %}</span>{% endif %}
+        </a>
+        {% if item.children %}
+          <div role="button" aria-pressed="false" aria-label="Toggle Submenu" tabindex="0" class="caret-wrap caret">
+            <span class="caret">
+              <svg class="sub-menu-icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" style="transform:rotate(180deg)">
+                <rect width="15" height="15" fill="none"/>
+                <path fill="currentColor" d="M14,12a1,1,0,0,1-.73-.32L7.5,5.47,1.76,11.65a1,1,0,0,1-1.4,0A1,1,0,0,1,.3,10.3l6.47-7a1,1,0,0,1,1.46,0l6.47,7a1,1,0,0,1-.06,1.4A1,1,0,0,1,14,12Z"/>
+              </svg>
+            </span>
+          </div>
+        {% endif %}
+      </div>
+      
+      {% if item.children %}
+        <ul class="sub-menu">
+          {% for child in item.children %}
+            <li class="menu-item {% if child.children %}menu-item-has-children{% endif %}">
+              <div class="wrap">
+                <a href="{{ child.url | relative_url }}">
+                  {% if child.children %}<span class="menu-item-title-wrap dd-title">{% endif %}
+                  {{ child.title }}
+                  {% if child.children %}</span>{% endif %}
+                </a>
+                {% if child.children %}
+                  <div role="button" aria-pressed="false" aria-label="Toggle Submenu" tabindex="0" class="caret-wrap caret">
+                    <span class="caret">
+                      <svg class="sub-menu-icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" style="transform:rotate(180deg)">
+                        <rect width="15" height="15" fill="none"/>
+                        <path fill="currentColor" d="M14,12a1,1,0,0,1-.73-.32L7.5,5.47,1.76,11.65a1,1,0,0,1-1.4,0A1,1,0,0,1,.3,10.3l6.47-7a1,1,0,0,1,1.46,0l6.47,7a1,1,0,0,1-.06,1.4A1,1,0,0,1,14,12Z"/>
+                      </svg>
+                    </span>
+                  </div>
+                {% endif %}
+              </div>
+              
+              {% if child.children %}
+                <ul class="sub-menu">
+                  {% for grandchild in child.children %}
+                    <li class="menu-item">
+                      <div class="wrap">
+                        <a href="{{ grandchild.url | relative_url }}">{{ grandchild.title }}</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

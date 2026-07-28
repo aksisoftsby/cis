@@ -1,0 +1,35 @@
+<header class="header">
+  <a class="neve-skip-link show-on-focus" href="#content">Lompat ke konten</a>
+  <div id="header-grid" class="hfg_header site-header">
+    <nav class="header--row header-main layout-full-contained nv-navbar" data-row-id="main" data-show-on="desktop">
+      <div class="header--row-inner header-main-inner">
+        <div class="container">
+          <div class="row row--wrapper" data-section="hfg_header_layout_main">
+            <div class="hfg-slot left">
+              <div class="builder-item desktop-left">
+                <div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+                  <div class="site-logo">
+                    <a class="brand" href="{{ '/' | relative_url }}" rel="home">
+                      <img width="600" height="150" src="{{ '/wp-content/uploads/2020/10/cropped-d69bedbc-18b1-4961-9f74-04ac82d4a35a.jpg' | relative_url }}" class="neve-site-logo" alt="{{ site.title }}" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hfg-slot right">
+              <div class="builder-item has-nav hfg-is-group has-primary-menu">
+                <div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu">
+                  <div class="nv-nav-wrap">
+                    <div role="navigation" class="nav-menu-primary style-full-height m-style sm-style sm-style-full-height" aria-label="Menu Utama">
+                      {% include navigation.html %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

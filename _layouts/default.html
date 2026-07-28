@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="wp-custom-logo wp-theme-neve theme-neve nv-blog-default nv-sidebar-right" id="neve_body">
+  <div class="wrapper">
+    {% include header.html %}
+    
+    <main id="content" class="neve-main" role="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+</body>
+</html>

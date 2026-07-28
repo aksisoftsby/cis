@@ -1,0 +1,42 @@
+<div class="nv-sidebar-wrap col-sm-12 nv-right blog-sidebar">
+  <aside id="secondary" role="complementary">
+    
+    <!-- Recent Posts Widget -->
+    <div id="recent-posts-2" class="widget widget_recent_entries">
+      <p class="widget-title">Pos-pos Terbaru</p>
+      <ul>
+        {% for post in site.posts limit:5 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Archives Widget -->
+    <div id="archives-3" class="widget widget_archive">
+      <p class="widget-title">Arsip</p>
+      <ul>
+        {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+        {% for year in postsByYear %}
+          <li>
+            <a href="{{ '/blog/' | relative_url }}">{{ year.name }}</a> ({{ year.items.size }})
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Categories Widget -->
+    <div id="categories-3" class="widget widget_categories">
+      <p class="widget-title">Kategori</p>
+      <ul>
+        {% for category in site.categories %}
+          <li class="cat-item">
+            <a href="{{ '/blog/' | relative_url }}">{{ category[0] | capitalize }}</a> ({{ category[1].size }})
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </aside>
+</div>

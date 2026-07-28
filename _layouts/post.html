@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="container nv-single-post-wrap">
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+    <!-- Main Content Column -->
+    <div class="col-md-8 col-sm-12" style="flex: 0 0 70%; max-width: 70%; padding-right: 30px;">
+      <article class="post">
+        {% include breadcrumbs.html %}
+        <header class="entry-header" style="text-align: left; margin-bottom: 20px;">
+          <h1 class="title entry-title" style="margin-bottom: 10px;">{{ page.title }}</h1>
+          <div class="nv-meta-list" style="color: #666; font-size: 0.9em; margin-bottom: 20px;">
+            <span>Dipublikasikan pada: {{ page.date | date: "%d/%m/%Y" }}</span>
+            {% if page.author %}
+              &nbsp;|&nbsp; <span>Oleh: {{ page.author }}</span>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="entry-content nv-content-wrap">
+          {{ content }}
+        </div>
+      </article>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="col-md-4 col-sm-12" style="flex: 0 0 30%; max-width: 30%;">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</div>

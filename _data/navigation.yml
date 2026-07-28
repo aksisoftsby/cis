@@ -1,0 +1,28 @@
+main:
+  - title: "Home"
+    url: "/"
+  - title: "About Us"
+    url: "/about-us/"
+  - title: "Our Portfolio"
+    url: "/our-portfolio/"
+  - title: "Products"
+    url: "#"
+    children:
+      - title: "Rockwool (Import)"
+        url: "/product/rockwool-roxul-impor-2/"
+      - title: "Aksesoris"
+        url: "/product-category/aksesoris/"
+      - title: "Glasswool"
+        url: "/product-category/glass/"
+        children:
+          - title: "Glasswool Asia Pacific"
+            url: "/product/glasswool/"
+      - title: "Stonewool"
+        url: "/product-category/stonewool/"
+        children:
+          - title: "Firerock (Local)"
+            url: "/product/stonewool-firerock/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Contact Us"
+    url: "/contact-us/"

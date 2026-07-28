@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="container nv-page-title-wrap">
+  <div class="row">
+    <div class="col-12">
+      {% include breadcrumbs.html %}
+      <h1 class="entry-title title title-post">{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+    <div class="col-md-8 col-sm-12 nv-content-wrap" style="flex: 0 0 70%; max-width: 70%; padding-right: 30px;">
+      {{ content }}
+      
+      <div class="product-cta" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-left: 4px solid #0366d6; border-radius: 4px;">
+        <h3>Tertarik dengan produk ini?</h3>
+        <p>Hubungi tim kami untuk konsultasi, penawaran harga, dan pemesanan.</p>
+        <a href="https://wa.me/6285233826633" target="_blank" rel="noopener" class="button button-primary" style="display: inline-block; padding: 12px 24px; background: #25d366; color: #fff; border-radius: 4px; font-weight: bold; text-decoration: none;">
+          Hubungi via WhatsApp (+62 852-3382-6633)
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12" style="flex: 0 0 30%; max-width: 30%;">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</div>
