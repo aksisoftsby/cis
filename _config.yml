@@ -5,8 +5,8 @@
 # Site identity
 title: "Indomandiri Isolasi"
 description: "Supplier rockwool, glasswool, aluminium foil, dan material isolasi panas dan suara di Indonesia. Melayani Surabaya, Jakarta, Semarang, Bali, Kalimantan, Sulawesi."
-url: "https://indomandiriisolasi.com"
-baseurl: ""
+url: "https://aksisoftsby.github.io"
+baseurl: "/cis"
 lang: id
 
 # Build
