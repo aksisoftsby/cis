@@ -90,13 +90,7 @@ exclude:
   - "wp-login.php.html"
   - "wp-login-action-lostpassword.html"
   - "xmlrpc-rsd.php"
-  # WordPress legacy single-page files
-  - "index-p-*.html"
-  - "index-p-1.html"
-  - "index-p-91.html"
-  - "index-p-136.html"
-  - "index-p-145.html"
-  - "index-p-201.html"
+  # WordPress legacy single-page files (Now INCLUDED so they are copied to _site/)
   # WordPress year/month archive dirs (not needed in Jekyll)
   - "2019"
   - "2020"
