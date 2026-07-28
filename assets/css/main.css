@@ -5,22 +5,208 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
 
+/* -------------------------------------------------------
+   Neve Theme CSS Variables – extracted from WordPress
+   neve-style-inline-css (neve-pro theme customizations)
+   ------------------------------------------------------- */
 :root {
-  --nv-primary-accent: #0366d6;
-  --nv-secondary-accent: #024ea4;
+  /* Brand colors */
+  --nv-primary-accent: #2f5aae;
+  --nv-secondary-accent: #2f5aae;
   --nv-site-bg: #ffffff;
-  --nv-light-bg: #f8f9fa;
-  --nv-dark-bg: #1a1a1a;
-  --nv-text-color: #2b2b2b;
+  --nv-light-bg: #f4f5f7;
+  --nv-dark-bg: #121212;
+  --nv-text-color: #272626;
   --nv-text-dark-bg: #ffffff;
-  --nv-c-1: #0366d6;
-  --nv-c-2: #e9ecef;
+  --nv-c-1: #9463ae;
+  --nv-c-2: #be574b;
+  --nv-fallback-ff: Arial, Helvetica, sans-serif;
+
+  /* Container widths (mobile-first) */
+  --container: 748px;
+  --postwidth: 100%;
+
+  /* Buttons */
+  --primarybtnbg: var(--nv-primary-accent);
+  --primarybtnhoverbg: var(--nv-primary-accent);
+  --primarybtncolor: #fff;
+  --primarybtnhovercolor: #fff;
+  --secondarybtncolor: var(--nv-primary-accent);
+  --secondarybtnhovercolor: var(--nv-primary-accent);
+  --primarybtnborderradius: 3px;
+  --secondarybtnborderradius: 3px;
+  --secondarybtnborderwidth: 3px;
+  --btnpadding: 13px 15px;
+  --primarybtnpadding: 13px 15px;
+  --secondarybtnpadding: calc(13px - 3px) calc(15px - 3px);
+
+  /* Typography – body */
+  --bodyfontfamily: "Work Sans";
+  --bodyfontsize: 15px;
+  --bodylineheight: 1.6em;
+  --bodyletterspacing: 0px;
+  --bodyfontweight: 400;
+  --bodytexttransform: none;
+
+  /* Typography – headings */
+  --headingsfontfamily: "Work Sans";
+  --h1fontsize: 1.5em;   --h1fontweight: 900; --h1lineheight: 1.6em; --h1letterspacing: 0px; --h1texttransform: uppercase;
+  --h2fontsize: 1.3em;   --h2fontweight: 900; --h2lineheight: 1.6em; --h2letterspacing: 0px; --h2texttransform: uppercase;
+  --h3fontsize: 1.1em;   --h3fontweight: 900; --h3lineheight: 1.6;   --h3letterspacing: 0px; --h3texttransform: uppercase;
+  --h4fontsize: 1em;     --h4fontweight: 900; --h4lineheight: 1.6;   --h4letterspacing: 0px; --h4texttransform: uppercase;
+  --h5fontsize: 0.75em;  --h5fontweight: 900; --h5lineheight: 1.6;   --h5letterspacing: 0px; --h5texttransform: uppercase;
+  --h6fontsize: 0.75em;  --h6fontweight: 900; --h6lineheight: 1.6;   --h6letterspacing: 0px; --h6texttransform: uppercase;
+
+  /* Forms */
+  --formfieldborderwidth: 2px;
+  --formfieldborderradius: 3px;
+  --formfieldbgcolor: var(--nv-site-bg);
+  --formfieldbordercolor: #dddddd;
+  --formfieldcolor: var(--nv-text-color);
+  --formfieldpadding: 10px 12px;
+
+  /* Shop */
+  --shopcoltemplate: 2;
 }
 
-/* Global Reset & Basic Formatting */
+/* -------------------------------------------------------
+   Tablet breakpoint (≥576px)
+   ------------------------------------------------------- */
+@media (min-width: 576px) {
+  :root {
+    --container: 992px;
+    --postwidth: 100%;
+    --bodyfontsize: 16px;
+    --bodylineheight: 1.6em;
+    --bodyletterspacing: 0px;
+    --h1fontsize: 1.5em;  --h1lineheight: 1.6em; --h1letterspacing: 0px;
+    --h2fontsize: 1.3em;  --h2lineheight: 1.6em; --h2letterspacing: 0px;
+    --h3fontsize: 1.1em;  --h3lineheight: 1.6;   --h3letterspacing: 0px;
+    --h4fontsize: 1em;    --h4lineheight: 1.6;   --h4letterspacing: 0px;
+    --h5fontsize: 0.75em; --h5lineheight: 1.6;   --h5letterspacing: 0px;
+    --h6fontsize: 0.75em; --h6lineheight: 1.6;   --h6letterspacing: 0px;
+    --shopcoltemplate: 2;
+  }
+  .header-menu-sidebar { width: 360px; }
+  .builder-item--logo { --maxwidth: 140px; --fs: 24px; --padding: 10px 0; --margin: 0; --textalign: left; --justify: flex-start; }
+  .builder-item--primary-menu { --spacing: 20px; --height: 25px; --smiconsize: 7px; --padding: 0; --margin: 0; --fontsize: 1em; --lineheight: 1.6; --letterspacing: 0px; --iconsize: 1em; }
+  .builder-item--button_base { --padding: 8px 12px; --margin: 0; }
+}
+
+/* -------------------------------------------------------
+   Desktop breakpoint (≥960px)
+   ------------------------------------------------------- */
+@media (min-width: 960px) {
+  :root {
+    --container: 1170px;
+    --postwidth: 100%;
+    --bodyfontsize: 16px;
+    --bodylineheight: 1.5em;
+    --bodyletterspacing: 0px;
+    --h1fontsize: 45px;  --h1lineheight: 1.4em; --h1letterspacing: 0px;
+    --h2fontsize: 45px;  --h2lineheight: 1.4em; --h2letterspacing: 0px;
+    --h3fontsize: 22px;  --h3lineheight: 1.4;   --h3letterspacing: 0px;
+    --h4fontsize: 18px;  --h4lineheight: 1.4;   --h4letterspacing: 0px;
+    --h5fontsize: 16px;  --h5lineheight: 1.4;   --h5letterspacing: 0px;
+    --h6fontsize: 14px;  --h6lineheight: 1.4;   --h6letterspacing: 0px;
+    --shopcoltemplate: 3;
+  }
+  .builder-item--logo { --maxwidth: 300px; }
+  .builder-item--primary-menu { --spacing: 20px; --height: 25px; --smiconsize: 7px; --padding: 0; --margin: 0; --fontsize: 1em; --lineheight: 1.6; --letterspacing: 0px; --iconsize: 1em; }
+  .builder-item--button_base { --padding: 8px 12px; --margin: 0; }
+}
+
+/* -------------------------------------------------------
+   Header / Navigation component variables
+   ------------------------------------------------------- */
+.header-main {
+  --rowbcolor: var(--nv-light-bg);
+  --color: var(--nv-text-dark-bg);
+  --bgcolor: rgba(255, 255, 255, 0.8);
+}
+
+.header-menu-sidebar-bg {
+  --justify: flex-start;
+  --textalign: left;
+  --flexg: 1;
+  --wrapdropdownwidth: auto;
+  --color: var(--nv-text-color);
+  --bgcolor: var(--nv-site-bg);
+}
+
+.header-menu-sidebar { width: 360px; }
+
+.builder-item--logo {
+  --maxwidth: 140px;
+  --fs: 24px;
+  --padding: 10px 0;
+  --margin: 0;
+  --textalign: left;
+  --justify: flex-start;
+}
+
+.builder-item--nav-icon,
+.header-menu-sidebar .close-sidebar-panel .navbar-toggle {
+  --bgcolor: #7d7b7b;
+}
+
+.builder-item--nav-icon {
+  --label-margin: 0 5px 0 0;
+  --padding: 10px 15px;
+  --margin: 0;
+}
+
+.builder-item--primary-menu {
+  --color: #000000;
+  --hovercolor: #ffffff;
+  --hovertextcolor: var(--nv-text-color);
+  --activecolor: #0818fe;
+  --spacing: 20px;
+  --height: 25px;
+  --smiconsize: 7px;
+  --padding: 0;
+  --margin: 0;
+  --fontsize: 1em;
+  --lineheight: 1.6;
+  --letterspacing: 0px;
+  --fontweight: 500;
+  --texttransform: none;
+  --iconsize: 1em;
+}
+
+.builder-item--primary-menu .sub-menu {
+  --bstyle: none;
+  --itembstyle: none;
+}
+
+.builder-item--button_base {
+  --primarybtnbg: var(--nv-primary-accent);
+  --primarybtncolor: #fff;
+  --primarybtnhoverbg: var(--nv-primary-accent);
+  --primarybtnhovercolor: #fff;
+  --primarybtnborderradius: 0;
+  --primarybtnshadow: none;
+  --primarybtnhovershadow: none;
+  --padding: 8px 12px;
+  --margin: 0;
+}
+
+/* -------------------------------------------------------
+   Meta list & layout helpers
+   ------------------------------------------------------- */
+.nv-meta-list { --avatarsize: 20px; }
+.single .nv-meta-list { --avatarsize: 20px; }
+.nv-post-cover .nv-title-meta-wrap,
+.nv-page-title-wrap,
+.entry-header { --textalign: left; }
+.single:not(.single-product), .page { --c-vspace: 0 0 0 0; }
+
+/* -------------------------------------------------------
+   Global Reset & Basic Formatting
+   ------------------------------------------------------- */
 html {
   box-sizing: border-box;
-  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Work Sans', var(--nv-fallback-ff);
   line-height: 1.6;
   color: var(--nv-text-color);
   background-color: var(--nv-site-bg);
@@ -61,15 +247,6 @@ img {
 
 main#content {
   flex: 1 0 auto;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 /* Utility Classes */
